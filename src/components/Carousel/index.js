@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Bar from "../Bar";
 import './style.css'
 
 const Carousel = ({children}) => {
@@ -30,6 +31,11 @@ const Carousel = ({children}) => {
                     style={{transform: `translateX(-${index * 100}%)`}}>
                     {children}
                 </div>
+            </div>
+            <div className="bar-container">
+                {Array.from({length: items}, ((_, i) => {
+                   return <Bar key={i} index={index} currentIndex={index === i ? true : false}/>
+                }))}
             </div>
             <button className="right-btn" onClick={nextSlide}>&gt;</button>
         </div>

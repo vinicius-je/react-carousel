@@ -25,6 +25,7 @@
     object-fit: cover;
 }
 
+
 .left-btn, .right-btn{
     position: absolute;
     top: 50%;
@@ -53,3 +54,14 @@
 .right-btn{
     right: 15px;
 }
+
+.bar-container{
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+
