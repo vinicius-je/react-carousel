@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import { useMediaQuery } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 
 const MultipleItem = ({children}) => {
-    // console.log(show);
     const [index, setIndex] = useState(0);
     const [show, setShow] = useState(4);
     const [slides] = useState(children.length);
+
+    const breakpoint1 = useMediaQuery('(max-width: 1200px)');
+    const breakpoint2 = useMediaQuery('(max-width: 900px)');
+    const breakpoint3 = useMediaQuery('(max-width: 580px)');
+
+    const checkMediaQuery = () => {
+        if(breakpoint1) setShow(3);
+        else setShow(4);
+        if(breakpoint2) setShow(2);
+        if(breakpoint3) setShow(1);
+    }
+
+    useEffect(() => {
+        checkMediaQuery();
+    }, [breakpoint1, breakpoint2, breakpoint3])
 
     const nextSlide = () => {
         if(index < (slides - show)){

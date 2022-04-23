@@ -18,7 +18,7 @@
     transition: all 250ms linear;
     justify-content: space-between;
     width: 100%;
-    padding: 0 10px;
+    /* padding: 0 10px; */
 }
 
 .multiple-item-content > * {
@@ -26,15 +26,18 @@
     flex-grow: 1;
 }
 
-
-.multiple-item-content .show-2 > * {
-    width: 50%;
+.show-1 > * {
+    width: 100%;
 }
 
-.multiple-item-content .show-3 > * {
+.show-2 > * {
+    width: 50%;
+}
+    
+.show-3 > * {
     width: calc(100% / 3);
 }
 
-.multiple-item-content .show-4 > * {
+.show-4 > * {
     width: calc(100% / 4);
 }
